@@ -1,0 +1,46 @@
+{
+  "name": "@telegraph-engineering/pa11y-ci-reporter-cli",
+  "version": "1.0.0",
+  "description": "Displays a summary of pa11y-ci JSON output in the console",
+  "main": "./main/index.js",
+  "bin": "./bin/index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest",
+    "lint": "eslint \"**/*.js\"",
+    "verify": "npm run lint && npm audit --audit-level=high && npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/telegraph/pa11y-ci-reporter-cli.git"
+  },
+  "keywords": [
+    "pa11y",
+    "pa11y-ci",
+    "a11y",
+    "accessibility",
+    "testing",
+    "telegraph"
+  ],
+  "author": "Telegraph Engineering",
+  "license": "MIT",
+  "homepage": "https://github.com/telegraph/pa11y-ci-reporter-cli",
+  "dependencies": {
+    "commander": "^6.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.9.0",
+    "jest": "^26.4.2"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.js",
+      "!**/bin/**",
+      "!**/coverage/**",
+      "!**/tests/**"
+    ],
+    "testEnvironment": "node",
+    "verbose": true
+  }
+}
